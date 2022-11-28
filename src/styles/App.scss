@@ -1,15 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+body {
+  padding: 2rem;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &-title {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    color: #37373f;
+    text-decoration: underline rgb(109, 147, 209);
+  }
+
+  &-form {
+    background-color: rgb(197, 197, 224);
+    border-radius: 0.3rem;
+    height: 4rem;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .adalabers__table {
   margin-top: 1rem;
   width: 100%;
 
   &-title {
-    font-size: 1.3rem;
     text-align: center;
     background-color: rgb(192, 234, 255);
+  }
+
+  &-sub {
+    font-size: 1.3rem;
+    padding: 0.3rem;
   }
 
   &-content {
     text-align: center;
     background-color: rgb(232, 230, 230);
+    color: #37373f;
+  }
+
+  &-line {
+    padding: 0.3rem;
+  }
+}
+
+.adalaber__medias {
+  text-decoration: none;
+  color: rgb(70, 166, 214);
+}
+
+.add__new {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &-sub {
+    font-size: 1.7rem;
+    color: #37373f;
+    text-decoration: underline rgb(109, 147, 209);
+    margin: 1rem;
+  }
+
+  &-form {
+    background-color: rgb(202, 186, 215);
+    border-radius: 0.3rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70rem;
+  }
+
+  &-label {
+    margin: 0.5rem;
+    color: #272728;
+    font-size: 1.1rem;
+  }
+
+  &-input {
+    padding: 0.3rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.1rem;
+    color: #272728;
+  }
+
+  &-button {
+    border: none;
+    border-radius: 0.3rem;
+    background-color: #37373f;
+    color: white;
+    margin: 1rem;
+    padding: 0.3rem;
+    width: 7rem;
+
+    &:hover {
+      background-color: #414142;
+      color: rgb(241, 242, 252);
+      cursor: pointer;
+    }
   }
 }
