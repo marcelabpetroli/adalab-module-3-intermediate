@@ -90,7 +90,7 @@ function App() {
           </table>
         </section>
         <section className='add__new'>
-          <h2 className='add__new-sub'>Añadir una nueva Adalaber</h2>
+          <h2 className='add__new-sub'>Añadir</h2>
           <form className='add__new-form'>
             <label className='add__new-label' htmlFor='name'>
               Nombre:
