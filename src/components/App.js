@@ -10,10 +10,11 @@ function App() {
     name: '',
     counselor: '',
     speciality: '',
+    social_networks: [],
   });
   const [searchName, setSearchName] = useState(ls.get('searchName', ''));
   const [searchCounselor, setSearchCounselor] = useState(ls.get('searchCounselor', ''));
-
+  console.log(adalabersData);
   const renderHtml = adalabersData
     .filter((eachItem) => eachItem.name.toLowerCase().includes(searchName.toLowerCase()))
     .filter((eachItem) => eachItem.counselor.includes(searchCounselor))
