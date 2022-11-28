@@ -1,1 +1,15 @@
+.adalabers__table {
+  margin-top: 1rem;
+  width: 100%;
 
+  &-title {
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: rgb(192, 234, 255);
+  }
+
+  &-content {
+    text-align: center;
+    background-color: rgb(232, 230, 230);
+  }
+}

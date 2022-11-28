@@ -38,16 +38,18 @@ function App() {
         </form>
       </header>
       <main>
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Tutora</th>
-              <th>Especialidad</th>
-            </tr>
-          </thead>
-          <tbody>{renderHtml}</tbody>
-        </table>
+        <section className='adalabers'>
+          <table className='adalabers__table'>
+            <thead>
+              <tr className='adalabers__table-title'>
+                <th>Nombre</th>
+                <th>Tutora</th>
+                <th>Especialidad</th>
+              </tr>
+            </thead>
+            <tbody className='adalabers__table-content'>{renderHtml}</tbody>
+          </table>
+        </section>
         <section className='add__new'>
           <h2>Añadir una Adalaber</h2>
           <form className='add__new-form'>
