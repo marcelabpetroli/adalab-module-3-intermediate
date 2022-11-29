@@ -26,17 +26,17 @@ function App() {
   const renderHtml = adalabersData
     .filter((eachItem) => eachItem.name.toLowerCase().includes(searchName.toLowerCase()))
     .filter((eachItem) => eachItem.counselor.includes(searchCounselor))
-    .map((item, id) => {
+    .map((item) => {
       return (
-        <tr className='adalabers__table-content' key={id}>
+        <tr className='adalabers__table-content' key={item.id}>
           <td className='adalabers__table-line'>{item.name}</td>
           <td className='adalabers__table-line'>{item.counselor}</td>
           <td className='adalabers__table-line'>{item.speciality}</td>
           <td>
             {item.social_networks.map((eachSocialMedia, index) => {
               return (
-                <a key={index} href={eachSocialMedia} className='adalaber__medias'>
-                  {eachSocialMedia.name}
+                <a key={index} href={eachSocialMedia.url} className='adalaber__medias'>
+                  {`${eachSocialMedia.name} `}
                 </a>
               );
             })}
@@ -52,6 +52,12 @@ function App() {
   const handleClick = (ev) => {
     ev.preventDefault();
     setAdalabersData([...adalabersData, newAdalaberInfo]);
+    setNewAdalaberInfo({
+      name: '',
+      counselor: '',
+      speciality: '',
+      social_networks: [],
+    });
   };
 
   const handleSearchName = (ev) => {
