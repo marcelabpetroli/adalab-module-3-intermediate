@@ -1,11 +1,12 @@
 import '../styles/App.scss';
-import data from '../data/data.json';
-import { useState } from 'react';
+// import data from '../data/data.json';
+import callToApi from '../services/api';
+import { useEffect, useState } from 'react';
 import ls from '../services/localStorage';
 
 function App() {
   //State variables
-  const [adalabersData, setAdalabersData] = useState(data);
+  const [adalabersData, setAdalabersData] = useState([]);
   const [newAdalaberInfo, setNewAdalaberInfo] = useState({
     name: '',
     counselor: '',
@@ -14,7 +15,14 @@ function App() {
   });
   const [searchName, setSearchName] = useState(ls.get('searchName', ''));
   const [searchCounselor, setSearchCounselor] = useState(ls.get('searchCounselor', ''));
-  console.log(adalabersData);
+
+  //Effect
+  useEffect(() => {
+    callToApi().then((data) => {
+      setAdalabersData(data.results);
+    });
+  }, []);
+
   const renderHtml = adalabersData
     .filter((eachItem) => eachItem.name.toLowerCase().includes(searchName.toLowerCase()))
     .filter((eachItem) => eachItem.counselor.includes(searchCounselor))
