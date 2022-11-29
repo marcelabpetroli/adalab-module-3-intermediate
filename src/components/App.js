@@ -1,5 +1,4 @@
 import '../styles/App.scss';
-// import data from '../data/data.json';
 import callToApi from '../services/api';
 import { useEffect, useState } from 'react';
 import ls from '../services/localStorage';
@@ -51,13 +50,15 @@ function App() {
 
   const handleClick = (ev) => {
     ev.preventDefault();
-    setAdalabersData([...adalabersData, newAdalaberInfo]);
-    setNewAdalaberInfo({
-      name: '',
-      counselor: '',
-      speciality: '',
-      social_networks: [],
-    });
+    if (newAdalaberInfo.name && newAdalaberInfo.counselor && newAdalaberInfo.speciality) {
+      setAdalabersData([...adalabersData, newAdalaberInfo]);
+      setNewAdalaberInfo({
+        name: '',
+        counselor: '',
+        speciality: '',
+        social_networks: [],
+      });
+    }
   };
 
   const handleSearchName = (ev) => {
