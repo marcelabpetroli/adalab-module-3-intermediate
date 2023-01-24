@@ -33,11 +33,33 @@ function App() {
           <td className='adalabers__table-line'>{item.speciality}</td>
           <td>
             {item.social_networks.map((eachSocialMedia, index) => {
-              return (
-                <a key={index} href={eachSocialMedia.url} className='adalaber__medias'>
-                  {`${eachSocialMedia.name} `}
-                </a>
-              );
+              if (eachSocialMedia.name === 'GitHub') {
+                return (
+                  <span key={index}>
+                    <a className='adalaber__medias github' href={eachSocialMedia.url} rel='noreferrer' target='_blank'>
+                      <i className='fa-brands fa-github-alt'></i>
+                    </a>
+                  </span>
+                );
+              } else if (eachSocialMedia.name === 'LinkedIn') {
+                return (
+                  <span key={index}>
+                    <a className='adalaber__medias' href={eachSocialMedia.url} rel='noreferrer' target='_blank'>
+                      <i className='fa-brands fa-linkedin-in'></i>
+                    </a>
+                  </span>
+                );
+              } else if (eachSocialMedia.name === 'Twitter') {
+                return (
+                  <span key={index}>
+                    <a className='adalaber__medias twitter' href={eachSocialMedia.url} rel='noreferrer' target='_blank'>
+                      <i className='fa-brands fa-twitter'></i>
+                    </a>
+                  </span>
+                );
+              } else {
+                return null;
+              }
             })}
           </td>
         </tr>
@@ -76,13 +98,25 @@ function App() {
         <h1 className='search-title'>Adalabers</h1>
         <form className='search-form'>
           <div>
-            <label htmlFor='name'>Nombre:</label>
-            <input type='text' name='name' id='name' placeholder='Ej: MariCarmen' onChange={handleSearchName} value={searchName} />
+            <label className='search-label' htmlFor='name'>
+              Nombre:
+            </label>
+            <input
+              className='search-input'
+              type='text'
+              name='name'
+              id='name'
+              placeholder='Ej: MariCarmen'
+              onChange={handleSearchName}
+              value={searchName}
+            />
           </div>
 
           <div>
-            <label htmlFor='counselor'>Tutora:</label>
-            <select name='counselor' id='counselor' onChange={handleSearchCounselor}>
+            <label className='search-label' htmlFor='counselor'>
+              Tutora:
+            </label>
+            <select className='search-input' name='counselor' id='counselor' onChange={handleSearchCounselor}>
               <option value=''>Escoge una opción</option>
               <option value='Yanelis'>Yanelis</option>
               <option value='Dayana'>Dayana</option>
